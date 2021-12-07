@@ -7,7 +7,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
 const app = express();
-const port = 4000
+const port = 3000
 
 
 // app.engine('handlebars', engine());
