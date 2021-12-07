@@ -1,20 +1,25 @@
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
-const morgan = require('morgan')
+const morgan = require('morgan');
+const {engine} = require('express-handlebars');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const indexRouter = require('./routes');
-const usersRouter = require('./routes/users');
+const indexRouter = require('./resources/routes');
+const usersRouter = require('./resources/routes/users');
 
 const app = express();
-const port = 4000
+const port = 3030
 
+// import express from 'express';
+// import handlebars from 'express-handlebars';
 
-// app.engine('handlebars', engine());
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'handlebars');
+app.engine('hbs', engine({
+    extname: '.hbs'
+}));
+app.set('views', path.join(__dirname, 'resources/views'));
+app.set('view engine', 'hbs');
 
 app.use(morgan('combined'))
 app.use(logger('dev'));
