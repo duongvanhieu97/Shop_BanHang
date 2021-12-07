@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon --inspect app.js"
+    "start": "nodemon --inspect src/app.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -12,10 +12,9 @@
     "express": "~4.16.1",
     "express-handlebars": "^6.0.2",
     "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
-    "morgan": "~1.9.1"
+    "jade": "~1.11.0"
   },
-  "main": "app.js",
+  "main": "src/app.js",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/duongvanhieu97/Shop_BanHang.git"
@@ -28,6 +27,7 @@
   "homepage": "https://github.com/duongvanhieu97/Shop_BanHang#readme",
   "description": "",
   "devDependencies": {
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.15"
   }
 }

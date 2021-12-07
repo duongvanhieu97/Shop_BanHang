@@ -1,13 +1,14 @@
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
+const morgan = require('morgan')
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const indexRouter = require('./routes/index');
+const indexRouter = require('./routes');
 const usersRouter = require('./routes/users');
 
 const app = express();
-const port = 3000
+const port = 4000
 
 
 // app.engine('handlebars', engine());
@@ -15,6 +16,7 @@ const port = 3000
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'handlebars');
 
+app.use(morgan('combined'))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
